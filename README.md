@@ -43,7 +43,7 @@ Usage of rancher-stats:
   -secretKey string
     	Rancher secret key. Or env RANCHER_SECRET_KEY
   -url string
-    	Rancher url. Or env RANCHER_URL (default "https://try.rancher.com/v2-beta")
+    	Rancher url. Or env RANCHER_URL
 ```
 
 [alpine-base]: https://github.com/rawmind0/alpine-base
