@@ -20,6 +20,7 @@ docker build -t rawmind/rancher-stats:<version> .
 
 This image run rancher-stats service. Rancher-stats get metrics from your rancher server and send them to a influx in order to be viewed by a grafana. 
 
+```
 Usage of rancher-stats:
   -accessKey string
     	Rancher access key. Or env RANCHER_ACCESS_KEY
@@ -43,5 +44,6 @@ Usage of rancher-stats:
     	Rancher secret key. Or env RANCHER_SECRET_KEY
   -url string
     	Rancher url. Or env RANCHER_URL (default "https://try.rancher.com/v2-beta")
+```
 
 [alpine-base]: https://github.com/rawmind0/alpine-base
