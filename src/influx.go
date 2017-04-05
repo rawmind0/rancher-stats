@@ -2,7 +2,6 @@ package main
 
 import (
     "time"
-    "fmt"
     log "github.com/Sirupsen/logrus"
     influx "github.com/influxdata/influxdb/client/v2"
 )
