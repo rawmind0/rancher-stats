@@ -24,7 +24,9 @@ RUN apk add --no-cache git mercurial bzr make go musl-dev && \
     mv rancher-stats ${SERVICE_HOME}/ && \
     cd /opt && \ 
     rm -rf /opt/src && \
-    apk del --no-cache git mercurial bzr make go musl-dev
+    apk del --no-cache git mercurial bzr make go musl-dev && \
+    addgroup -g ${SERVICE_GID} ${SERVICE_GROUP} && \
+    adduser -g "${SERVICE_NAME} user" -D -h ${SERVICE_HOME} -G ${SERVICE_GROUP} -s /sbin/nologin -u ${SERVICE_UID} ${SERVICE_USER}
 
 USER $SERVICE_USER
 WORKDIR $SERVICE_HOME
