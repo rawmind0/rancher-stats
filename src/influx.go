@@ -36,12 +36,23 @@ func (i *Influx) Init() () {
     check(err, message)
 
     log.Info(message)
+    i.createDb()
     i.newBatch()
 }
 
-func (i *Influx) Close() () {
+func (i *Influx) Close() {
     message := "Closing Influx connection..."
     err := i.cli.Close()
+    check(err, message)
+    log.Info(message)
+}
+
+func (i *Influx) createDb() {
+    var err  error
+    message := "Creating Influx database if not exists..."
+
+    q := influx.NewQuery("CREATE DATABASE IF NOT EXISTS "+i.db, "", "")
+    _, err = i.cli.Query(q)
     check(err, message)
     log.Info(message)
 }

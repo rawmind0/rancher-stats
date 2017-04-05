@@ -47,7 +47,7 @@ func (p *Params) checkParams() {
 	}
 	if p.format != "influx" && p.format != "json"{
 		flag.Usage()
-		log.Info("Check your format params. influx | yml | json ")
+		log.Info("Check your format params. influx | json ")
 		os.Exit(1) 
 	}
 	if p.format == "influx" {
