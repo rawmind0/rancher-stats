@@ -58,8 +58,6 @@ func (i *Influx) createDb() {
     response, err := i.cli.Query(q)
     check(err, message)
     log.Info(message)
-    fmt.Println(comm)
-    fmt.Println(response.Results)
 }
 
 func (i *Influx) newBatch() {
