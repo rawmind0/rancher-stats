@@ -53,7 +53,7 @@ func (i *Influx) createDb() {
     message := "Creating Influx database if not exists..."
 
     q := influx.NewQuery("CREATE DATABASE IF NOT EXISTS "+i.db, "", "")
-    response, err = i.cli.Query(q)
+    response, err := i.cli.Query(q)
     check(err, message)
     log.Info(message)
     fmt.Println(response.Results)
